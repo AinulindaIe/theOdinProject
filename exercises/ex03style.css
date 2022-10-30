@@ -1,0 +1,13 @@
+.blackBtn, .yellowBtn {
+    font-size: 28px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.blackBtn {
+    background-color: black;
+    color: white;
+}
+
+.yellowBtn {
+    background-color: yellow;
+}
