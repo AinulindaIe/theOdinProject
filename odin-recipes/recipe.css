@@ -1,4 +1,7 @@
-
+.recipeImg {
+    width: 600;
+    height: 300;
+}
 
 .ingredients {
     background-color: bisque;
