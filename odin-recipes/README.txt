@@ -2,7 +2,10 @@ Folder for completing the assignment: https://www.theodinproject.com/lessons/fou
 from theodinproject.
 
 First: 
-Setup index and structure 
+Setup index and structure - Done!
 
 Second: 
-Add lasagna page to recipes
+Add lasagna page to recipes. - Done!
+
+Third:
+Add two new recipes - 
