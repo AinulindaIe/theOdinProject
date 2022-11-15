@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event-listener Practice page</title>
+</head>
+<body>
+    <div>
+        <button onclick="alert('Hello World')">Click Me</button>
+
+        <button id="btn1">Click Me</button>
+
+        <button id="btn2">Click Me Too</button>
+    </div>
+    <div>
+        <button id="btn3">Try me</button>
+    </div>
+    <script>
+        const btnOne = document.querySelector('#btn1');
+        btnOne.onclick = () => alert("Hello World");
+
+        const btnTwo = document.querySelector("#btn2");
+        btnTwo.addEventListener('click', () => {
+            alert("Hello World");
+        });
+
+        const btnThree = document.querySelector('#btn3');
+        btnThree.addEventListener('click', function (e) {
+            console.log(e.target);
+            e.target.style.cssText = "background-color : blue;";
+        });
+
+        const buttons = document.querySelectorAll('button');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () =>{
+                button.textContent = "Changed";
+            });
+        });
+    </script>
+</body>
+</html>
