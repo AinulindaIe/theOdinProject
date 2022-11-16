@@ -25,10 +25,18 @@ body {
 }
 
 .brushstroke-container {
-    border: 2px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 760px;
 }
 
 .grid-row {
     display: flex;
     flex-direction: row;
+}
+
+
+.grid-square {
+    background-color: #59C1BD;
+    opacity: 0;
 }
