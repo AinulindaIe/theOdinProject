@@ -1,0 +1,41 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #D6E9FE;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    justify-content: space-evenly;
+    padding: 200px;
+}
+
+.choice-container {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: space-evenly;
+}
+
+.output-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.score-title{
+    font-weight: 700;
+}
+
+button {
+    background-color: #5995DA;
+    color: #fff;
+    border: 0;
+    min-width: 50px;
+    min-height: 30px;
+    border-radius: 5px;
+}
