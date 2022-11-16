@@ -11,15 +11,43 @@
 
 */
 
-const grid = document.querySelector('.grid-container');
+// GRID setup
+function newGrid(units){
+    const grid = document.querySelector('.grid-container');
 
-for (let i = 0; i < 16; i++){
-    const row = document.createElement('div');
-    row.classList.add('grid-row');
-    for (let j = 0; j < 16; j++){
-        const square = document.createElement('div');
-        square.classList.add('grid-square');
-        row.appendChild(square);
+    if (units > 0 && units < 101){
+        for (let i = 0; i < units; i++){
+            const row = document.createElement('div');
+            row.classList.add('grid-row');
+            for (let j = 0; j < units; j++){
+                const square = document.createElement('div');
+                square.classList.add('grid-square');
+                row.appendChild(square);
+            }
+            grid.appendChild(row);
+        }
+    }else{
+        console.warn(`Illegal grid-size: ${units}, 0-100 allowed`);
     }
-    grid.appendChild(row);
 }
+
+// Change brush-stroke
+function setBrush(brushFunction){
+    const gridSquares = Array.from(document.querySelectorAll('.grid-square'));
+    gridSquares.forEach(square => square.addEventListener('mouseenter', brushFunction));
+}
+
+function deselectBrush(brushFunction){
+    const gridSquares = Array.from(document.querySelectorAll('.grid-square'));
+    gridSquares.forEach(square => square.removeEventListener('mouseenter', brushFunction));
+}
+
+// BRUSHES
+function binaryBrush(e) {
+    this.style.cssText = "background-color: black;";
+}
+
+// Initial configuration
+newGrid(16);
+let currentBrush = binaryBrush;
+setBrush(currentBrush);

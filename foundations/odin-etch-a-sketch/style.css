@@ -12,16 +12,13 @@ body {
     align-items: center;
 }
 
-div {
-    border: 2px solid black;
-}
 
 .grid-container {
     display: flex;
     flex: auto;
     flex-direction: column;
-    min-width: 760px;
-    min-height: 760px;
+    min-width: 720px;
+    min-height: 720px;
 }
 
 .brushstroke-container {
@@ -37,4 +34,5 @@ div {
 
 .grid-square {
     min-height: 45px;
+    min-width: 45px;
 }
