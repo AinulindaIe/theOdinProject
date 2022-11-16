@@ -10,24 +10,38 @@
 
 
 */
-
+const GRIDWINDOW_SIZE = 720;
 // GRID setup
 function newGrid(units){
     const grid = document.querySelector('.grid-container');
+    const side = Math.floor((GRIDWINDOW_SIZE / units));
 
     if (units > 0 && units < 101){
+
         for (let i = 0; i < units; i++){
             const row = document.createElement('div');
             row.classList.add('grid-row');
+            row.style.cssText += `heigth: ${side}px`
+
             for (let j = 0; j < units; j++){
                 const square = document.createElement('div');
                 square.classList.add('grid-square');
+                square.style.cssText += `width: ${side}px; height: ${side}px;`
                 row.appendChild(square);
             }
+            
             grid.appendChild(row);
         }
     }else{
-        console.warn(`Illegal grid-size: ${units}, 0-100 allowed`);
+        console.warn(`Illegal grid-size: ${units}, 1-100 allowed`);
+    }
+}
+
+function removeGrid() {
+    const grid = document.querySelector('.grid-container');
+    // Solution from stackOverflow by Gabriel McAdams
+    while (grid.firstChild) {
+        grid.removeChild(grid.lastChild);
     }
 }
 
@@ -44,10 +58,21 @@ function deselectBrush(brushFunction){
 
 // BRUSHES
 function binaryBrush(e) {
-    this.style.cssText = "background-color: black;";
+    this.style.cssText += "background-color: black;";
 }
 
+
+//Select grid interaction with user
+function selectGrid(e) {
+    const size = prompt("Choose grid-size (1-100)");
+    removeGrid();
+    newGrid(size);
+    setBrush(currentBrush);
+}
 // Initial configuration
 newGrid(16);
 let currentBrush = binaryBrush;
 setBrush(currentBrush);
+
+const promptBtn = document.querySelector('.prompt-btn');
+promptBtn.addEventListener('click', selectGrid);

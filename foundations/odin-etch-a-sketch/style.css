@@ -3,8 +3,12 @@
     #A0E4CB
     #59C1BD
     #0D4C92
-*/
-
+    .grid-square {
+        min-height: 45px;
+        min-width: 45px;
+    }
+    */
+    
 body {
     background-color: #CFF5E7;
     display: flex;
@@ -15,7 +19,6 @@ body {
 
 .grid-container {
     display: flex;
-    flex: auto;
     flex-direction: column;
     min-width: 720px;
     min-height: 720px;
@@ -28,11 +31,4 @@ body {
 .grid-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    min-height: 45px;
-}
-
-.grid-square {
-    min-height: 45px;
-    min-width: 45px;
 }
