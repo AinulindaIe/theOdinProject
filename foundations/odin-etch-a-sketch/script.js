@@ -55,6 +55,10 @@ function setBrush(brushFunction, eventKey){
 
 function deselectBrush(brushFunction, eventKey){
     const gridSquares = Array.from(document.querySelectorAll('.grid-square'));
+    
+    if (brushFunction === transitionBrush) {
+        gridSquares.forEach(square => square.classList.remove('.transition-square'));
+    }
     gridSquares.forEach(square => square.removeEventListener(eventKey, brushFunction));
 }
 
@@ -100,6 +104,7 @@ function enableColorBrush() {
     currentEventKey = 'mouseenter';
 }
 
+
 //Select grid interaction with user
 function selectGrid(e) {
     const size = prompt("Choose grid-size (1-100)");
@@ -124,3 +129,4 @@ shadeBrushBtn.addEventListener('click', enableShadingBrush);
 
 const colorBrushBtn = document.querySelector('.color');
 colorBrushBtn.addEventListener('click', enableColorBrush);
+
