@@ -40,7 +40,3 @@ body {
     background-color: #59C1BD;
     opacity: 0;
 }
-
-.transition-square {
-    transition: all 0.07s ease;
-}
