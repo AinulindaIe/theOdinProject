@@ -1,3 +1,10 @@
+/*
+    ACKNOWLEDGEMENT: 
+    This lexer is heavily inspired by the implementation done by tylerlaceby
+    youtube live: "Writing a Basic Math Expression Parser in JavaScript"
+    link: https://www.youtube.com/watch?v=qNBoJ3cHyUI&ab_channel=tylerlaceby
+*/
+
 const TOKEN_TYPES = {
     NUMBER : "NUMBER",
     OPERAND_PRIORI_ONE : "OPERAND_PRIORI_ONE",
